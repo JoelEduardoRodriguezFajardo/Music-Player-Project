@@ -1,6 +1,6 @@
-// MP3 PLayer consisting of 6 songs and a talk by John Kennedy for your everyday intelligence.
+// MP3 PLayer consisting of 6 songs and a speech by John Kennedy for your everyday intelligence. (In song 4)
 
-// Coded by Joel Eduardo Rodriguez Fajardo
+// Coded by: Joel Eduardo Rodriguez Fajardo
 
 // Directions;
 // Little dark-grey oval on the left PLAYS THE SONG and the one on the right STOPS IT.
@@ -148,7 +148,6 @@ void setGradient(int x, int y, float w, float h, color c1, color c2, int axis ) 
    */
 }
 
-
 void mousePressed () {
   if (mouseX > 500+10 && mouseX < 590 && mouseY > 550+10 && mouseY < 590) {
     exit();
@@ -175,4 +174,15 @@ void mousePressed () {
     println ("Current Song Number is: " + indexSong);
  
     }
-  }
+    if (indexSong < 0 | indexSong >= song.length) {
+    if (indexSong < 0) {
+      indexSong = 0;
+      println("You are pressing the Previous Button a lot \n" +
+        "Please press the Next Button or the Play Button.");
+      println("Your song number is changed to " + indexSong + ".");
+    } else {
+      indexSong = song.length - 1;
+      println ("You are at the end of the song list, \n" +
+        "Press the Previous Song or Play Keys");
+      println("Your song number is changed to " + indexSong + ".");
+    }}}
